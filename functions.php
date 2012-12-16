@@ -9,12 +9,20 @@ function html_head($args){
     );
     $vars = array_merge($defaults, $args);
     $html = '<!doctype html>
-<html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <title>' . $vars['title'] . '</title>
     <meta name="description" content="' . $vars['description'] . '">
     <meta name="author" content="Zarino Zappia and Alex Spratt">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/css/bootstrap-responsive.min.css" rel="stylesheet">
     <meta http-equiv="cleartype" content="on">
 </head>
 <body>
@@ -23,7 +31,11 @@ function html_head($args){
 }
 
 function html_foot(){
-    return '</body>
+    return '
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>window.jQuery || document.write(\'<script src="vendor/js/jquery-1.8.3.min.js"><\/script>\')</script>
+<script src="/vendor/js/bootstrap.min.js"></script>
+</body>
 </html>';
 }
 
