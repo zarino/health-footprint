@@ -1,5 +1,32 @@
 <?php
 
+/* HTML TEMPLATE FUNCTIONS */
+
+function html_head($args){
+	$defaults = array(
+        'title' => 'Health Footprint',
+        'description'=> 'Helping Doctors make an impact with medical volunteering.'
+    );
+    $vars = array_merge($defaults, $args);
+    $html = '<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>' . $vars['title'] . '</title>
+    <meta name="description" content="' . $vars['description'] . '">
+    <meta name="author" content="Zarino Zappia and Alex Spratt">
+    <meta http-equiv="cleartype" content="on">
+</head>
+<body>
+';
+    return $html;
+}
+
+function html_foot(){
+    return '</body>
+</html>';
+}
+
 /* DATABASE FUNCTIONS */
 
 function connect_to_database(){
