@@ -5,7 +5,8 @@
 function html_head($args){
 	$defaults = array(
         'title' => 'Health Footprint',
-        'description'=> 'Helping Doctors make an impact with medical volunteering.'
+        'description' => 'Helping Doctors make an impact with medical volunteering.',
+        'body_class' => ''
     );
     $vars = array_merge($defaults, $args);
     $html = '<!doctype html>
@@ -25,7 +26,7 @@ function html_head($args){
     <link href="/vendor/css/bootstrap-responsive.min.css" rel="stylesheet">
     <meta http-equiv="cleartype" content="on">
 </head>
-<body>
+<body class="' . $vars['body_class'] . '">
 ';
     return $html;
 }

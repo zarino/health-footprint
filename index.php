@@ -6,10 +6,10 @@ require $_SERVER['DOCUMENT_ROOT'] . '/functions.php';
 connect_to_database();
 # setup_database();
 
-print html_head(array('title'=>'hello'));
+print html_head(array('body_class'=>'home'));
 
 $r = mysqli_query($GLOBALS['dbc'], "SELECT now()");
-while($row=mysqli_fetch_array($r)){
+while($row=mysqli_fetch_array($r, MYSQLI_ASSOC)){
     pretty_print_r($row);
 }
 
