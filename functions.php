@@ -83,8 +83,8 @@ function get_mysql_timezone_offset(){
 }
 
 function setup_database(){
-    mysqli_query($GLOBALS['dbc'], 'CREATE TABLE IF NOT EXISTS doctor (gmc_number INT PRIMARY KEY, first_name VARCHAR(64) NULL, last_name VARCHAR(64) NULL, hospital TINYTEXT NULL, department TINYTEXT NULL, subspecialty TINYTEXT NULL, location VARCHAR(64) NULL, funder VARCHAR(64) NULL, created DATETIME NULL)');
-    mysqli_query($GLOBALS['dbc'], 'CREATE TABLE IF NOT EXISTS trip (id INT PRIMARY KEY AUTO_INCREMENT, gmc_number INT NULL, destination VARCHAR(64) NULL, year INT NULL, month TINYINT NULL, days INT NULL, created DATETIME NULL)');
+    mysqli_query($GLOBALS['dbc'], 'CREATE TABLE IF NOT EXISTS doctor (gmc_number CHAR(7) PRIMARY KEY, first_name VARCHAR(64) NULL, last_name VARCHAR(64) NULL, hospital TINYTEXT NULL, department TINYTEXT NULL, subspecialty TINYTEXT NULL, location VARCHAR(64) NULL, funder VARCHAR(64) NULL, created DATETIME NULL)');
+    mysqli_query($GLOBALS['dbc'], 'CREATE TABLE IF NOT EXISTS trip (id INT PRIMARY KEY AUTO_INCREMENT, gmc_number CHAR(7) NULL, destination VARCHAR(64) NULL, year INT NULL, month TINYINT NULL, days INT NULL, created DATETIME NULL, UNIQUE trip_index (gmc_number, destination, year, month, days) )');
 }
 
 /* UTILITY FUNCTIONS */
