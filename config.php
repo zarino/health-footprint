@@ -3,6 +3,8 @@
 # define('HASH_CHARS', '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 define('HASH_CHARS', '0123456789abcdefghijklmnopqrstuvwxyz');
 
+date_default_timezone_set('Europe/London');
+
 # define('DB_USER', 'override-in-config-secret.php');
 # define('DB_PASSWORD', 'override-in-config-secret.php');
 # define('DB_HOST', 'override-in-config-secret.php');
