@@ -112,15 +112,6 @@ function integer_to_hash($integer, $base = HASH_CHARS){
     return $base[$integer] . $out;
 }
 
-function uri_part($index){
-	$parts = array_values(array_filter(explode('/', preg_replace('#(\.json|\.html)$#', '', $_SERVER['REQUEST_URI']))));
-	if($index < count($parts)){
-		return $parts[$index];
-	} else {
-		throw new Exception("Cannot return part #" . $index . ': REQUEST_URI "' . $_SERVER['REQUEST_URI'] . '" only has ' . count($parts) . ' part' . pluralise(count($parts)));
-	}
-}
-
 /* STRING FUNCTIONS */
 
 function begins_with($haystack, $needle){
@@ -153,7 +144,7 @@ function pluralise($number, $plural_suffix='s', $singular_suffix=''){
 	}
 }
 
-function pretty_print_r($arg1, $arg2='', $suffix=''){
+function prettyprint($arg1, $arg2='', $suffix=''){
 	if(is_array($arg1) || is_object($arg1)){
 		$array = $arg1;
 	} else if(is_array($arg2) || is_object($arg2)) {
@@ -169,7 +160,7 @@ function pretty_print_r($arg1, $arg2='', $suffix=''){
 		print_r($array);
 		print '</pre>' . $suffix;
 	} else {
-	    throw new Exception("Incorrect parameters supplied to pretty_print_r() - function takes an optional string prefix, a required array, and an optional string suffix");
+	    throw new Exception("Incorrect parameters supplied to prettyprint() - function takes an optional string prefix, a required array, and an optional string suffix");
 	}
 }
 
