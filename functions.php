@@ -24,18 +24,31 @@ function html_head($args){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
     <link href="/vendor/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <meta http-equiv="cleartype" content="on">
 </head>
 <body class="' . $vars['body_class'] . '">
+    <div class="container-narrow">
+        <div class="masthead">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="/">About</a></li>
+                <li><a href="/trip/">Record a trip</a></li>
+                <li><a href="/stats/">View Statistics</a></li>
+            </ul>
+            <h3 class="muted">Health Footprints</h3>
+        </div>
+        <hr>
 ';
     return $html;
 }
 
 function html_foot(){
     return '
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script>window.jQuery || document.write(\'<script src="vendor/js/jquery-1.8.3.min.js"><\/script>\')</script>
-<script src="/vendor/js/bootstrap.min.js"></script>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script>window.jQuery || document.write(\'<script src="vendor/js/jquery-1.8.3.min.js"><\/script>\')</script>
+    <script src="/vendor/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
 </body>
 </html>';
 }
