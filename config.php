@@ -86,9 +86,9 @@ $HTTP_CODES = array(
 	599 => 'Network connect timeout error'
 );
 
-if(file_exists('config-secret.php')){
+if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/config-secret.php')){
 	ob_start();
-	include 'config-secret.php';
+	include $_SERVER['DOCUMENT_ROOT'] . '/config-secret.php';
 	ob_end_clean();
 }
 
