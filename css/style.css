@@ -1,0 +1,16 @@
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.container_narrow > hr {
+    margin: 30px 0;
+}
+
+#add_trip h3 {
+    margin-top: 0;
+}
+
+#add_trip .remove_trip {
+    margin-top: 25px;
+}
